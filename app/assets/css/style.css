@@ -1,0 +1,44 @@
+
+.sidebar-list{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.sidebar-list li a{
+    color: #fff;
+    display: block;
+    padding: 10px;
+}
+
+.sidebar-list li a:hover {
+    background-color: #575757;
+}
+
+table tbody tr th{
+    text-align: center;
+}
+
+.category-list{
+    margin-top: 30px;
+    width: 160px;
+    display: none;
+    background-color: #575757;
+    height: 70%;
+}
+.category{
+    cursor: default;
+}
+.category:hover .category-list{
+    display: block;
+    cursor: pointer;
+}
+
+.link-dashboard{
+    color: #fff;
+}
+
+/* client */
+/* header */
+
+
+

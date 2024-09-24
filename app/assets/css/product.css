@@ -1,0 +1,52 @@
+.container {
+    max-width: 1200px; /* Giới hạn độ rộng tối đa */
+    margin: 0 auto; /* Căn giữa */
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép bọc khi vượt quá hàng */
+}
+
+.product-item {
+    flex: 0 0 16.66%; /* Mỗi sản phẩm chiếm 2 cột (12 cột => 100%/12 = 8.33%) */
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng kích thước */
+    padding: 10px;
+    text-align: center; /* Căn giữa nội dung */
+}
+
+.product-item img {
+    max-width: 100%; /* Hình ảnh tự động điều chỉnh theo cột */
+    height: auto; /* Giữ tỉ lệ khung hình */
+    border-radius: 8px; /* Bo tròn góc */
+}
+
+
+.product-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-item p {
+    font-size: 16px;
+    color: #333;
+}
+
+.product-item button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007BFF; /* Màu nền */
+    color: white; /* Màu chữ */
+    border-radius: 5px; /* Bo tròn góc */
+    cursor: pointer; /* Con trỏ chuột chuyển sang hình bàn tay */
+}
+
+.product-item button:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+}

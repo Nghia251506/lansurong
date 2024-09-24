@@ -1,0 +1,15 @@
+.alert {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    opacity: 0;  /* Ban đầu không hiển thị */
+    transition: opacity 0.5s ease-in; /* Hiệu ứng chuyển động mờ dần */
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}

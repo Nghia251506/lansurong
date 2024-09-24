@@ -1,0 +1,23 @@
+.form-search {
+    display: flex;
+    gap: 10px; /* Khoảng cách giữa các input */
+}
+
+.input-search {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-search {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-search:hover {
+    background-color: #0056b3;
+}

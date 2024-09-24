@@ -1,0 +1,126 @@
+/* Responsive CSS */
+@media (max-width: 1200px) {
+    .grid {
+        flex-direction: column; /* Đặt các phần tử theo cột */
+    }
+
+    .body-container {
+        margin: 20px; /* Thêm khoảng cách cho body-container */
+    }
+
+    .main-info {
+        flex-direction: column; /* Đặt hình ảnh và nội dung thành cột */
+        align-items: center; /* Căn giữa nội dung */
+    }
+
+    .body-intro {
+        text-align: center; /* Căn giữa văn bản trong body-intro */
+    }
+
+    .body-imge img {
+        max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của màn hình */
+        height: auto; /* Giữ tỷ lệ khung hình */
+    }
+
+    .master {
+        flex-direction: column; /* Đặt lực lượng nòng cốt thành cột */
+        align-items: center; /* Căn giữa các phần tử */
+    }
+
+    .master-info {
+        margin-bottom: 20px; /* Thêm khoảng cách giữa các thẻ master-info */
+    }
+
+    .master-info img {
+        max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng */
+        height: auto; /* Giữ tỷ lệ khung hình */
+    }
+
+    .callnow {
+        display: block; /* Đặt nút gọi ngay thành khối */
+        margin-top: 10px; /* Thêm khoảng cách phía trên */
+    }
+}
+
+@media (max-width: 768px) {
+    .master {
+        flex-direction: column; /* Đặt các thành viên trong master thành cột */
+        padding: 0 10px; /* Thêm khoảng cách xung quanh */
+    }
+
+    h1.title,
+    h1.master-title {
+        font-size: 1.5em; /* Điều chỉnh kích thước tiêu đề */
+    }
+}
+
+
+/* Header Styles */
+/* .header {
+    background-color: var(--color-header);
+    padding: 10px 20px;
+}
+
+.header-logo img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+.header-navbar {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+}
+
+.header-navbar ul {
+    display: flex;
+    flex-wrap: wrap; 
+    padding: 0;
+}
+
+.header-navbar li {
+    margin: 0 10px; 
+}
+
+.header-navbar a {
+    display: flex;
+    align-items: center;
+} */
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-navbar {
+        flex-direction: column; /* Đặt navbar thành cột trên màn hình nhỏ */
+        align-items: flex-start; /* Căn trái các item */
+        width: 100%; /* Đảm bảo navbar chiếm toàn bộ chiều rộng */
+    }
+
+    .header-navbar ul {
+        width: 100%; /* Đảm bảo ul chiếm toàn bộ chiều rộng */
+        flex-direction: column; /* Đặt các mục ul thành cột */
+        padding: 0;
+    }
+
+    .header-navbar li {
+        width: 100%; /* Mỗi mục sẽ chiếm toàn bộ chiều rộng */
+        margin: 5px 0; /* Khoảng cách giữa các mục */
+    }
+
+    .user-menu {
+        width: 100%; /* Đảm bảo user-menu chiếm toàn bộ chiều rộng */
+        text-align: left; /* Căn trái cho user-menu */
+    }
+
+    .dropdown {
+        position: absolute; /* Hiển thị dropdown bên dưới menu người dùng */
+        display: none; /* Ẩn dropdown mặc định */
+        background-color: var(--color-header); /* Nền của dropdown */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1; /* Đặt trên các phần tử khác */
+        width: 100%; /* Chiều rộng dropdown */
+    }
+
+    .user-menu:hover .dropdown {
+        display: block; /* Hiển thị dropdown khi hover */
+    }
+}
