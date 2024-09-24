@@ -18,7 +18,7 @@ class ProductController extends BaseController
     {
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             // Lấy thông tin sản phẩm nếu có $id, nghĩa là đang chỉnh sửa
-            if ($id > 0) {
+            if (isset($id)) {
                 $product = $this->__productModel->getProductById($id);
                 $this->view("layouts/admin", ["page" => "products/form_product", "product" => $product]);
             } else {

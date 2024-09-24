@@ -13,12 +13,14 @@
     $shows = $data["shows"];
     $totalPages = $data["totalPages"];
     $currentPage = $data["currentPage"];
+    $customerName = $data["customer_name"] ?? "";
+    $customerPhone = $data["customer_phone"] ?? "";
     ?>
 
     <h2 style="text-align: center;">Tìm kiếm lịch diễn</h2>
     <form method="POST" action="http://localhost/mvcphp/show/search" class="form-search">
-        <input type="text" name="customer_name" placeholder="Tên khách hàng" class="input-search">
-        <input type="text" name="customer_phone" placeholder="Số điện thoại" class="input-search">
+        <input type="text" name="customer_name" placeholder="Tên khách hàng" class="input-search" value="<?php echo !empty($customerName) ? $customerName : "" ?>">
+        <input type="text" name="customer_phone" placeholder="Số điện thoại" class="input-search" value="<?php echo !empty($customerPhone) ? $customerPhone : "" ?>">
         <input type="submit" value="Tìm kiếm" class="submit-search">
     </form>
 
@@ -60,7 +62,12 @@
     <!-- Phân trang -->
     <div class="pagination">
         <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-            <a href="http://localhost/mvcphp/show/search?page=<?= $i ?>"><?= $i ?></a>
+            <!-- <a href="http://localhost/mvcphp/show/search?page=<?= $i ?>"></a> -->
+            <form method="POST" action="http://localhost/mvcphp/show/search?page=<?= $i ?>" >
+                <input type="hidden" name="customer_name" placeholder="Tên khách hàng"  value="<?php echo !empty($customerName) ? $customerName : "" ?>">
+                <input type="hidden" name="customer_phone" placeholder="Số điện thoại"  value="<?php echo !empty($customerPhone) ? $customerPhone : "" ?>">
+                <input type="submit" value="<?= $i ?>" class="submit-search">
+            </form>
         <?php endfor; ?>
     </div>
 </body>

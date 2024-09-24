@@ -23,7 +23,7 @@ class ShowController extends BaseController
         ]);
     }
 
-    public function add($id = null)
+    public function add($id = 0)
     {
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             if (isset($id)) {
@@ -61,21 +61,25 @@ class ShowController extends BaseController
     public function search($page = 1) {
         $customerName = $_POST['customer_name'] ?? '';
         $customerPhone = $_POST['customer_phone'] ?? '';
-    
-        $limit = 10;
-        $offset = ($page - 1) * $limit;
-    
-        $shows = $this->__showModel->searchShows($customerName, $customerPhone, $limit, $offset);
         
+        if(empty($_REQUEST["page"])){
+            $page = 1;
+        }else{
+            $page = $_REQUEST["page"];
+        }
+        $limit = 1;
+        $offset = ($page - 1) * $limit;
+        $shows = $this->__showModel->searchShows($customerName, $customerPhone, $limit, $offset);
         // Lấy tổng số record để phân trang
         $totalShows = $this->__showModel->countShows($customerName, $customerPhone);
         $totalPages = ceil($totalShows / $limit);
-    
         $this->view("layouts/admin", [
             "page" => "shows/listShow",
             "shows" => $shows,
             "totalPages" => $totalPages,
             "currentPage" => $page,
+            "customer_name" =>$customerName,
+            "customer_phone" =>$customerPhone
         ]);
     }
     

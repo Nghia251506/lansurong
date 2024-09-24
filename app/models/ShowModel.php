@@ -127,11 +127,12 @@ class ShowModel
             $sql = "SELECT * FROM shows WHERE 
                         (customer_name LIKE :customerName OR :customerName = '') AND 
                         (customer_phone LIKE :customerPhone OR :customerPhone = '') 
-                        LIMIT :limit OFFSET :offset";
+                        ORDER BY id desc
+                        LIMIT :limit_page OFFSET :offset";
             $stmt = $this->__conn->prepare($sql);
             $stmt->bindValue(":customerName", '%' . $customerName . '%');
             $stmt->bindValue(":customerPhone", '%' . $customerPhone . '%');
-            $stmt->bindParam(":limit", $limit, PDO::PARAM_INT);
+            $stmt->bindParam(":limit_page", $limit, PDO::PARAM_INT);
             $stmt->bindParam(":offset", $offset, PDO::PARAM_INT);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -140,6 +141,7 @@ class ShowModel
             return [];
         }
     }
+    
     public function countShows($customerName, $customerPhone)
     {
         try {
